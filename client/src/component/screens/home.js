@@ -117,11 +117,11 @@ const Home = ()=>{
                      <img src={item.photo} alt="Reload" />
                   </div>
                   <div className="card-content">
-                  <i className="medium material-icons " style={{color:"red"}}>favorite</i>
+                  
                   {item.likes.includes(userId) ?
-                     <i className="material-icons"onClick={()=>{unlikePost(item._id)} }> thumb_down</i>
+                     <i className="medium material-icons"onClick={()=>{unlikePost(item._id)} }> thumb_down</i>
                      :  
-                     <i className="material-icons"onClick={()=>{likePost(item._id)}}> thumb_up</i>
+                     <i className="medium material-icons"onClick={()=>{likePost(item._id)}}> thumb_up</i>
                      }
                   
                      <h6>{item.likes.length} likes</h6>

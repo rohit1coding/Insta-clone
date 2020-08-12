@@ -39,6 +39,7 @@ const Login = ()=>{
 
                 M.toast({html:"Login Successfully!",classes:"#388e3c green darken-2"})
                 history.push("/")
+                window.location.reload()
                 })
                 .catch(err =>{console.log(err)})
         }

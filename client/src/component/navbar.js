@@ -7,9 +7,9 @@ const NavBar = ()=>{
   const renderList = ()=>{
     if(state){
       return [
-        <li><Link to="/FollowingPost">My Following</Link></li>,
-        <li><Link to="/Profile">{JSON.parse(localStorage.getItem("user")).name}</Link></li>,
-        <li><Link to="/CreatePost">Create Post </Link></li>,
+        <li className="list-item"><Link to="/FollowingPost">My Following</Link></li>,
+        <li className="list-item"><Link to="/Profile">{JSON.parse(localStorage.getItem("user")).name}</Link></li>,
+        <li className="list-item"><Link to="/CreatePost">Create Post </Link></li>,
         <li>
           <button className="btn #d32f2f red darken-2" type="submit" name="action"
                 onClick={()=>{
@@ -31,16 +31,19 @@ const NavBar = ()=>{
   }
 
     return(
-      // <div className="navbar-fixed">  </div>
-        <nav>
-    <div className="nav-wrapper white">
-      <Link to={state?"/":"login"} className="brand-logo left">Instagram</Link>
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
-      {renderList()}
-      </ul>
+      <nav className="collapse.navbar-collapse #7c4dff deep-purple accent-2">
+        <div className="container">
+          <div className="nav-wrapper white">
+            <Link to={state?"/":"login"} className="brand-logo left">Home</Link>
+            <ul id="nav-mobile" className=" dropdown-menu right ">
+              <li style={{width:"120px"}}><input type="text" placeholder="Search" /></li>
+              <li><i class="material-icons">search</i></li>
+            {renderList()}
+            </ul>
+          </div>
     </div>
-  </nav>
-    )
+</nav>
+  )
 } 
 
 export default  NavBar;

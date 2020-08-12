@@ -85,3 +85,8 @@
 .material-icons:hover{
   cursor: pointer;
 }
+.list-item:hover{
+  color: rgb(211, 205, 205);
+  background-color: white;
+  
+}
