@@ -35,7 +35,7 @@ const NavBar = ()=>{
         <div className="container">
           <div className="nav-wrapper white">
             <Link to={state?"/":"login"} className="brand-logo left">Home</Link>
-            <ul id="nav-mobile" className=" dropdown-menu right ">
+            <ul id="nav-mobile" className=" dropdown-menu right">
               <li style={{width:"120px"}}><input type="text" placeholder="Search" /></li>
               <li><i class="material-icons">search</i></li>
             {renderList()}

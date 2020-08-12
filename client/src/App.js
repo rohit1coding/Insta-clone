@@ -10,6 +10,7 @@ import CreatePost from "./component/screens/createPost"
 import {reducer,initialState} from "./reducers/userReducer"
 import ProfileOfUser from "./component/screens/UserProfile"
 import FollowingPost from "./component/screens/MyFollowingPosts"
+import { Collapsible } from 'materialize-css';
 export const UserContext= createContext()
 
 const Routing = ()=>{
@@ -52,6 +53,7 @@ const Routing = ()=>{
 
 function App() {
   const [state,dispatch] = useReducer(reducer,initialState)
+  // console.log(state)
   return (
     <UserContext.Provider value={{state,dispatch}}> 
       <BrowserRouter>

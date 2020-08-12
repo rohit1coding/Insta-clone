@@ -1,6 +1,7 @@
 import React,{useEffect,useState,useContext} from "react"
 import {UserContext} from "../../App"
-
+import M from "materialize-css"
+var urrl
 const Profile = ()=>{
     const [myPics,setPics]=useState([])
     const user =JSON.parse(localStorage.getItem("user"))
@@ -29,6 +30,9 @@ const Profile = ()=>{
             }).then(res=>res.json())
                 .then(data=>{
                     console.log(data.url)
+                    urrl= data.url
+                    if(urrl)
+                        M.toast({html:"pic Will updated when you login again!" ,classes:"#4caf50 green"})
                     fetch("/updatePic",{
                         method:"put",
                         headers:{
@@ -36,11 +40,12 @@ const Profile = ()=>{
                             "Authorization":"Bearer "+localStorage.getItem("jwt")
                         },
                         body:JSON.stringify({
-                            pic:data.url
+                            pic:urrl
                         })
                     }).then(result=>{
-                        console.log(result)
+                        console.log(urrl)
                         user.pic=data.url
+                        
                         // localStorage.setItem("user",JSON.stringify({...user,pic:data.pic}))
                         // dispatch({type:"UPDATEPIC",payload:data.url})
                     })
@@ -48,8 +53,10 @@ const Profile = ()=>{
                 })
             .catch(err=>console.log(err)) 
     },[image])
+    
     const updatePhoto=(file)=>{
         setImage(file)
+       
         
     }
     return( 
@@ -63,7 +70,7 @@ const Profile = ()=>{
                 <div >
                     <div>
                         <img style={{width:"160px",height:"175px",borderRadius:"160px"}}
-                            src={user.pic}
+                            src={user.pic?user.pic:"https://res.cloudinary.com/rohit1coding/image/upload/v1597177416/No_Image_Profile_pic_oqjp1i.png"}
                             alt="Reload"
                         /><br />
                     <div className="file-field input-field" style={{margin:"10px"}} >
@@ -96,7 +103,7 @@ const Profile = ()=>{
             {
                 myPics.map(item=>{
                     return(
-                        <img className="item" key={item._id} src={item.photo} alt="Reload" />
+                        <img style={{marginTop:"10px"}} className="item" key={item._id} src={item.photo} alt="Reload" />
                     )
                 })
             }

@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react"
+import { Link } from "react-router-dom"
 var userId
 if(localStorage.getItem("user"))
    userId=JSON.parse(localStorage.getItem("user"))._id
@@ -99,12 +100,17 @@ const Home = ()=>{
       })
    }
    return( 
-      <div className="home">
+      <div className="home ">
          {
             data.map(item=>{
                return(
                   <div className="card home-card" key={item._id}>
-                  <h5>{item.postedBy.name}
+                  <h5>
+                     <Link to={item.postedBy._id===userId?
+                        "/profile"
+                        : `/profile/${item.postedBy._id}`
+                     } >{item.postedBy.name}</Link>
+                     
                      {item.postedBy._id===userId 
                         && <button style={{float:"right"}}
                            onClick={()=>deletePost(item._id)} >
