@@ -93,8 +93,8 @@ const ProfileOfUser = ()=>{
                     }}>
                     <div>
                     <img style={{width:"160px",height:"160px",borderRadius:"80px"}}
-                            src={UserProfile.user.pic}
-                            alt="Reload"
+                            src={UserProfile.user.pic?UserProfile.user.pic:"https://res.cloudinary.com/rohit1coding/image/upload/v1597177416/No_Image_Profile_pic_oqjp1i.png"}
+                            
                         />
                     </div>
                         
