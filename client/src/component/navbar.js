@@ -34,9 +34,9 @@ const NavBar = ()=>{
       <nav className="collapse.navbar-collapse #7c4dff deep-purple accent-2">
         <div className="container">
           <div className="nav-wrapper white">
-            <Link to={state?"/":"login"} className="brand-logo left">Home</Link>
-            <ul id="nav-mobile" className=" dropdown-menu right">
-              <li style={{width:"120px"}}><input type="text" placeholder="Search" /></li>
+            <Link to={state?"/":"login"} className="brand-logo left" style={{marginLeft:"150px"}}>Home</Link>
+            <ul id="nav-mobile" className=" dropdown-menu left" style={{marginLeft:"250px"}}>
+              {/* <li style={{width:"120px"}}><input type="text" placeholder="Search" /></li> */}
               <li><i class="material-icons">search</i></li>
             {renderList()}
             </ul>
