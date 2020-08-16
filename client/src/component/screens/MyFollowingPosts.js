@@ -101,7 +101,7 @@ const FollowingPost = ()=>{
    return( 
       <div className="home">
          {
-            data.map(item=>{
+            data.slice(0).reverse().map(item=>{
                return(
                   <div className="card home-card" key={item._id}>
                   <h5>{item.postedBy.name}

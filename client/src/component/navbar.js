@@ -7,9 +7,9 @@ const NavBar = ()=>{
   const renderList = ()=>{
     if(state){
       return [
-        <li className="list-item"><Link to="/FollowingPost">My Following</Link></li>,
-        <li className="list-item"><Link to="/Profile">{JSON.parse(localStorage.getItem("user")).name}</Link></li>,
-        <li className="list-item"><Link to="/CreatePost">Create Post </Link></li>,
+        <li className="list-item"><Link to="/FollowingPost">Following Posts</Link></li>,
+        <li className="list-item"><Link to="/Profile">Profile</Link></li>,
+        <li className="list-item"><Link to="/CreatePost">Create Post</Link></li>,
         <li>
           <button className="btn #d32f2f red darken-2" type="submit" name="action"
                 onClick={()=>{
@@ -31,7 +31,7 @@ const NavBar = ()=>{
   }
 
     return(
-      <nav className="collapse.navbar-collapse #7c4dff deep-purple accent-2">
+      <nav className="collapse.navbar-collapse navbar-expand- #7c4dff deep-purple accent-2">
         <div className="container">
           <div className="nav-wrapper white">
             <Link to={state?"/":"login"} className="brand-logo left" style={{marginLeft:"150px"}}>Home</Link>
