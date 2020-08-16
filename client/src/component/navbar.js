@@ -24,8 +24,8 @@ const NavBar = ()=>{
     }
     else{
       return [
-        <li><Link to="/Login">Login</Link></li>,
-        <li><Link to="/Signup">Signup</Link></li>
+        <li className="list-item"><Link to="/Login">Login</Link></li>,
+        <li className="list-item"><Link to="/Signup">Signup</Link></li>
       ]
     }
   }
@@ -37,7 +37,7 @@ const NavBar = ()=>{
             <Link to={state?"/":"login"} className="brand-logo left" style={{marginLeft:"150px"}}>Home</Link>
             <ul id="nav-mobile" className=" dropdown-menu left" style={{marginLeft:"250px"}}>
               {/* <li style={{width:"120px"}}><input type="text" placeholder="Search" /></li> */}
-              <li><i class="material-icons">search</i></li>
+              <li><i className="material-icons">search</i></li>
             {renderList()}
             </ul>
           </div>
