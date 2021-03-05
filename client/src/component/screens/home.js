@@ -107,7 +107,7 @@ const Home = ()=>{
                   <div className="card home-card" key={item._id}>
                   <h5>
                      <div style={{display:"flex"}}>
-                     <div><img style={{width:"30px",height:"30px",borderRadius:"15px"}} src="https://res.cloudinary.com/rohit1coding/image/upload/v1597177416/No_Image_Profile_pic_oqjp1i.png" alt="" /></div>
+                     <div><img style={{width:"30px",height:"30px",borderRadius:"15px"}} src={item.userPic} alt="" /></div>
                      <div>
                      <Link to={item.postedBy._id===userId?
                         "/profile"

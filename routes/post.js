@@ -43,6 +43,7 @@ router.post("/CreatePost",requireLogin,(req,res)=>{
     const post = new Post({
         title,
         body,
+        userPic:req.user.pic,
         photo:picUrl,
         postedBy:req.user
     })
